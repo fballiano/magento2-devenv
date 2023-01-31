@@ -1,4 +1,4 @@
-# devenv.sh environment for Magento2 development
+# devenv.sh environment for Magento 2 development
 
 [devenv](https://devenv.sh) it's a powerful development environment based on [NixOS](https://nixos.org).  
 It allows you to have containerized environments without containers or hypervisor or emulation, with native performance on any platform.  
@@ -17,6 +17,16 @@ This repo has a basic (and yet complete) [OpenMage](https://github.com/OpenMage/
 
 1. If you don't have devenv/NixOS installed please follow [devenv's installation guide](https://devenv.sh/getting-started), it's actually pretty easy and straightforward.
 2. Then clone this repository to have all the configuration files on your machine
+
+# Install Magento 2
+
+1. Start all services with `devenv up`
+2. Open another terminal
+3. Enter the development environment shell with `devenv shell`
+4. Create the magento project in the magento2 folder with composer `create-project --repository-url=https://mirror.mage-os.org/ magento/project-community-edition:2.4.5 magento2`
+5. `cd magento2`
+6. `composer install`
+
 
 # Startup the environment
 
