@@ -53,12 +53,12 @@
         rewrite @dynamic /static.php?resource={re.reg_static.2}
       }
 
-      @mediaPath path_regexp reg_static ^/media/(.*)$
+      @mediaPath path_regexp reg_media ^/media/(.*)$
       handle @mediaPath {
-        @static file /media/{re.reg_static.2}
-        rewrite @static /media/{re.reg_static.2}
-        @dynamic not file /media/{re.reg_static.2}
-        rewrite @dynamic /get.php?resource={re.reg_static.2}
+        @static file /media/{re.reg_media.1}
+        rewrite @static /media/{re.reg_media.1}
+        @dynamic not file /media/{re.reg_media.1}
+        rewrite @dynamic /get.php?resource={re.reg_media.1}
       }
     '';
   };
