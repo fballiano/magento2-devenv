@@ -24,6 +24,8 @@
   };
 
   services.elasticsearch.enable = true;
+  services.elasticsearch.plugins = [ pkgs.elasticsearch7Plugins.analysis-icu pkgs.elasticsearch7Plugins.analysis-phonetic ];
+
   services.mailhog.enable = true;
   services.redis.enable = true;
   services.redis.port = 6379;
