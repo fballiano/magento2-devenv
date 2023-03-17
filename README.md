@@ -5,10 +5,10 @@ It allows you to have containerized environments without containers or hyperviso
 This is by far the fasted Magento/Openmage development environment I've ever worked with and it's more than worth of the time to learn it.
 
 This repo has a basic (and yet complete) [OpenMage](https://github.com/OpenMage/magento-lts) project installed via composer and all of the necessary software stack:
-- PHP 8.1 (managed by PHP-FPM and served by [Caddy](https://caddyserver.com))
+- PHP 8.2 (managed by PHP-FPM and served by [Caddy](https://caddyserver.com))
 - MySQL 8.0
-- redis 7.0
-- Elasticsearch 7
+- Redis 7.0
+- OpenSearch 2.6
 - Xdebug 3.2
 - [MailHog](https://github.com/mailhog/MailHog) for email testing
 - n98-magerun2
@@ -23,10 +23,11 @@ This repo has a basic (and yet complete) [OpenMage](https://github.com/OpenMage/
 1. Start all services with `devenv up`
 2. Open another terminal
 3. Enter the development environment shell with `devenv shell`
-4. Create the magento project in the magento2 folder with composer `create-project --repository-url=https://mirror.mage-os.org/ magento/project-community-edition:2.4.5 magento2`
+4. Create the magento project in the magento2 folder with composer `composer create-project --repository-url=https://mirror.mage-os.org/ magento/project-community-edition:2.4.6 magento2` (I'd prefer MageOS but at the moment 2.4.6 is not available on their repos)
 5. `cd magento2`
 6. `composer install`
-7. `bin/magento setup:install --base-url='http://magento2.test' --db-host='127.0.0.1' --db-user='magento2' --db-password='magento2' --db-name='magento2' --admin-firstname='admin' --admin-lastname='admin' --admin-email='admin@admin.com' --admin-user='admin' --admin-password='admin123' --language='en_US' --currency='EUR' --timezone='Europe/Rome' --use-rewrites='1' --backend-frontname='admin' --session-save-redis-host='127.0.0.1' --session-save-redis-port='6379' --session-save-redis-db='0' --cache-backend-redis-server='127.0.0.1' --cache-backend-redis-port='6379' --cache-backend-redis-db='1' --page-cache-redis-server='127.0.0.1' --page-cache-redis-port='6379' --page-cache-redis-db='2' --elasticsearch-host='127.0.0.1' --elasticsearch-port='9200'`
+7. Install sample data if you want
+8. `bin/magento setup:install --base-url='http://magento2.test' --db-host='127.0.0.1' --db-user='magento2' --db-password='magento2' --db-name='magento2' --admin-firstname='admin' --admin-lastname='admin' --admin-email='admin@admin.com' --admin-user='admin' --admin-password='admin123' --language='en_US' --currency='EUR' --timezone='Europe/Rome' --use-rewrites='1' --backend-frontname='admin' --session-save-redis-host='127.0.0.1' --session-save-redis-port='6379' --session-save-redis-db='0' --cache-backend-redis-server='127.0.0.1' --cache-backend-redis-port='6379' --cache-backend-redis-db='1' --page-cache-redis-server='127.0.0.1' --page-cache-redis-port='6379' --page-cache-redis-db='2' --elasticsearch-host='127.0.0.1' --elasticsearch-port='9200'`
 
 
 # Daily use
