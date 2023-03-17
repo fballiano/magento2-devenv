@@ -13,6 +13,10 @@ This repo has a basic (and yet complete) [OpenMage](https://github.com/OpenMage/
 - [MailHog](https://github.com/mailhog/MailHog) for email testing
 - n98-magerun2
 
+# Compatibility
+
+This branch is only compatible with Magento 2.4.6 because of the need for OpenSearch2 support (since [ElasticSearch7 is broken in NixOS](https://github.com/NixOS/nixpkgs/issues/213951)).
+
 # Install the environment
 
 1. If you don't have devenv/NixOS installed please follow [devenv's installation guide](https://devenv.sh/getting-started), it's actually pretty easy and straightforward.
