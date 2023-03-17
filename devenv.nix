@@ -4,7 +4,7 @@
   packages = [ pkgs.git pkgs.gnupatch pkgs.n98-magerun2 ];
 
   languages.php.enable = true;
-  languages.php.package = pkgs.php81.buildEnv {
+  languages.php.package = pkgs.php82.buildEnv {
     extensions = { all, enabled }: with all; enabled ++ [ xdebug xsl redis ];
     extraConfig = ''
       memory_limit = 512m
@@ -24,7 +24,7 @@
   };
 
   services.elasticsearch.enable = true;
-  services.elasticsearch.plugins = [ pkgs.elasticsearch7Plugins.analysis-icu pkgs.elasticsearch7Plugins.analysis-phonetic ];
+  services.elasticsearch.package = pkgs.opensearch;
 
   services.mailhog.enable = true;
   services.redis.enable = true;
