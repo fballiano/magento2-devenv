@@ -38,6 +38,6 @@ This branch is only compatible with Magento 2.4.6 because of the need for OpenSe
 
 1. Enter the project folder
 2. run `devenv up` to start all the software stack
-3. run `devenv up` to enter a shell with all softwares configured properly (like n98-magerun2)
+3. run `devenv shell` to enter a shell with all softwares configured properly (like n98-magerun2)
 
 At the moment the project is configured with `http://magento2.test` as the main domain name (you can change it in the `devenv.nix` file), so you'll have to add `magento2.test`to your `hosts` file first, then you'll be able to open the browser to `http://magento2.test`.
