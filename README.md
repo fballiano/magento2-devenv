@@ -1,5 +1,12 @@
 # devenv.sh environment for Magento 2 development
 
+<table><tr><td align=center>
+<strong>If you find my work valuable, please consider sponsoring</strong><br />
+<a href="https://github.com/sponsors/fballiano" target=_blank title="Sponsor me on GitHub"><img src="https://img.shields.io/badge/sponsor-30363D?style=for-the-badge&logo=GitHub-Sponsors&logoColor=#white" alt="Sponsor me on GitHub" /></a>
+<a href="https://www.buymeacoffee.com/fballiano" target=_blank title="Buy me a coffee"><img src="https://img.shields.io/badge/Buy_Me_A_Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" alt="Buy me a coffee" /></a>
+<a href="https://www.paypal.com/paypalme/fabrizioballiano" target=_blank title="Donate via PayPal"><img src="https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white" alt="Donate via PayPal" /></a>
+</td></tr></table>
+
 [devenv](https://devenv.sh) it's a powerful development environment based on [NixOS](https://nixos.org).  
 It allows you to have containerized environments without containers or hypervisor or emulation, with native performance on any platform.  
 This is by far the fasted Magento/Openmage development environment I've ever worked with and it's more than worth of the time to learn it.
