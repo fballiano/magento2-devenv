@@ -1,0 +1,15 @@
+# IDE / Addons
+.idea
+.qodo
+
+# nix
+.direnv/
+.phpbench/*
+
+# Devenv
+.devenv*
+devenv.local.nix
+.devenv.flake.nix
+
+magento2
+
