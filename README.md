@@ -12,17 +12,17 @@ It allows you to have containerized environments without containers or hyperviso
 This is by far the fasted Magento/Openmage development environment I've ever worked with and it's more than worth of the time to learn it.
 
 This repo has a basic (and yet complete) [OpenMage](https://github.com/OpenMage/magento-lts) project installed via composer and all of the necessary software stack:
-- PHP 8.2 (managed by PHP-FPM and served by [Caddy](https://caddyserver.com))
-- MySQL 8.0
-- Redis 7.0
-- OpenSearch 2.6
-- Xdebug 3.2
+- PHP 8.4 (managed by PHP-FPM and served by [Caddy](https://caddyserver.com))
+- MariaDB 11.4
+- Redis
+- OpenSearch
+- Xdebug
 - [MailHog](https://github.com/mailhog/MailHog) for email testing
 - n98-magerun2
 
 # Compatibility
 
-This branch is only compatible with Magento 2.4.6 because of the need for OpenSearch2 support (since [ElasticSearch7 is broken in NixOS](https://github.com/NixOS/nixpkgs/issues/213951)).
+This branch is only compatible with Magento 2.4.8.
 
 # Install the environment
 
@@ -34,7 +34,7 @@ This branch is only compatible with Magento 2.4.6 because of the need for OpenSe
 1. Start all services with `devenv up`
 2. Open another terminal
 3. Enter the development environment shell with `devenv shell`
-4. Create the magento project in the magento2 folder with composer `composer create-project --repository-url=https://mirror.mage-os.org/ magento/project-community-edition:2.4.6 magento2` (I'd prefer MageOS but at the moment 2.4.6 is not available on their repos)
+4. Create the magento project in the magento2 folder with composer `composer create-project --repository-url=https://mirror.mage-os.org/ magento/project-community-edition:2.4.8 magento2`
 5. `cd magento2`
 6. `composer install`
 7. Install sample data if you want
