@@ -2,12 +2,11 @@
 
 {
   packages = [ pkgs.git pkgs.gnupatch pkgs.n98-magerun2 ];
-
   languages.php.enable = true;
-  languages.php.package = pkgs.php82.buildEnv {
+  languages.php.package = pkgs.php84.buildEnv {
     extensions = { all, enabled }: with all; enabled ++ [ xdebug xsl redis ];
     extraConfig = ''
-      memory_limit = 512m
+      memory_limit = 1024M
       opcache.memory_consumption = 256M
       opcache.interned_strings_buffer = 20
     '';
@@ -23,9 +22,7 @@
     };
   };
 
-  services.elasticsearch.enable = true;
-  services.elasticsearch.package = pkgs.opensearch;
-
+  services.opensearch.enable = true;
   services.mailhog.enable = true;
   services.redis.enable = true;
   services.redis.port = 6379;
@@ -65,14 +62,17 @@
     '';
   };
 
-  services.mysql.enable = true;
-  services.mysql.settings.mysqld.port = 3306;
-  services.mysql.initialDatabases = [{ name = "magento2"; }];
-  services.mysql.ensureUsers = [
-    {
-      name = "magento2";
-      password = "magento2";
-      ensurePermissions = { "magento2.*" = "ALL PRIVILEGES"; };
-    }
-  ];
+  services.mysql = {
+    enable = true;
+    package = pkgs.mariadb_114;
+    initialDatabases = [{ name = "magento2"; }];
+    ensureUsers = [
+        {
+          name = "magento2";
+          password = "magento2";
+          ensurePermissions = { "magento2.*" = "ALL PRIVILEGES"; };
+        }
+    ];
+    settings.mysqld.port = 3306;
+  };
 }
